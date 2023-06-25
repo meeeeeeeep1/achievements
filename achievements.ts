@@ -19,6 +19,7 @@ namespace achievements {
         notification = sprites.create(achievement.getImage(), SpriteKind.Achievement)
         notification.setFlag(SpriteFlag.Ghost, true);
         notification.setFlag(SpriteFlag.RelativeToCamera, true)
+        notification.z = (1 / 0)
         notification.setPosition((achievement.getImage().width / 2) + 2, 0 - (achievement.getImage().height / 2))
         control.runInParallel(function () {
             let velocity = (speed == 0 ? speed : 1) || 1
