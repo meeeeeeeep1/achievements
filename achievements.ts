@@ -11,7 +11,7 @@ namespace achievements {
     let notification: Sprite = null
 
     //% block="show achievement $title || speed $speed  header $header  icon $icon"
-    //% icon.shadow="screen_image_picker"
+    //% icon.shadow="screen_image_picker" speed.defl=1
     //% expandableArgumentMode="enabeled"
     //% inlineInputMode="inline"
     export function create(title: string, speed?: number, header?: string, icon?: Image): void {
@@ -30,7 +30,7 @@ namespace achievements {
             console.log(achievement.shouldScroll())
             notification.vy = 0
             if (achievement.shouldScroll()) {
-                pause(200)
+                pause(500)
                 console.log(achievement.scrollLength())
                 for (let scroll = 0; scroll < achievement.scrollLength() * (2 / velocity); scroll++) {
                     notification.setImage(achievement.scroll(achievement.getSplitImage()[0], achievement.getSplitImage()[1], scroll * (-0.5 * Math.abs(velocity))))
